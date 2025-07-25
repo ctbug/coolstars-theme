@@ -583,6 +583,11 @@ body {
     backdrop-filter: blur(8px);
 }
 
+#vc-spotify-player {
+    background-color: #1316151a !important;
+    backdrop-filter: blur(8px);
+}
+
 .activityPanel_c48ade {
     background-color: #1316151a;
     backdrop-filter: blur(8px);
