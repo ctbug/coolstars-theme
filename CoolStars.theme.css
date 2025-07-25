@@ -1,13 +1,13 @@
 @import url("https://raw.githubusercontent.com/HeroOfDungeon/snippets/refs/heads/main/Less%20Animations.css");
-@import url('https://abbie.github.io/discord-css/import.css');
+@import url("https://abbie.github.io/discord-css/import.css");
 @import url("https://nspc911.github.io/themes/vencord/RefreshedSeamlessChatBar.theme.css");
 @import url("https://raw.githubusercontent.com/Augenbl1ck/Discord-Styles/refs/heads/main/expProfile.css");
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 :root {
-  --font-primary: Mulish;
-  --font-displat: Mulish;
-  --font-headline: Mulish;
+    --font-primary: Mulish;
+    --font-displat: Mulish;
+    --font-headline: Mulish;
 }
 
 /*
@@ -16,17 +16,26 @@
 
 /*customize these*/
 
-:root { 
+:root {
     --nvbgimg: url("https://raw.githubusercontent.com/ctbug/theme-bgs/refs/heads/main/34a00f67c504cbe0ad7e6d217e0916d4.jpg");
-   --nvbgadjust: rgba(0, 0, 0, 0.815); /*use this to tone the bg for better visibility*/
-   --scrollbar-thin-track: transparent;
-   --scrollbar-auto-track: transparent; 
-   }
+    --nvbgadjust: rgba(
+        0,
+        0,
+        0,
+        0.815
+    ); /*use this to tone the bg for better visibility*/
+    --scrollbar-thin-track: transparent;
+    --scrollbar-auto-track: transparent;
+}
 
 /*we'll set the background image at the very bottom*/
-body { background: center/cover var(--nvbgimg) !important; }
+body {
+    background: center/cover var(--nvbgimg) !important;
+}
 /*add the toning layer..*/
-#app-mount { background: var(--nvbgadjust) !important; }
+#app-mount {
+    background: var(--nvbgadjust) !important;
+}
 
 /*then we clear out backgrounds from a bunch of elements*/
 [class^=app_], /*main app bg*/
@@ -98,32 +107,39 @@ body { background: center/cover var(--nvbgimg) !important; }
 [class^=contentRegion_],
 [class^=contentRegionScroller_], /* main region */
 [class^=sidebarRegionScroller_], /* sidebar region */
-[class^=standardSidebarView_]
- { background: none !important; }
+[class^=standardSidebarView_] {
+    background: none !important;
+}
 
 /*remove some shadows*/
 [class^=chat_]::before,
 [class^=header_],
 [class^=content_]::before,
 [class^=tabBody_]::before, /*dm list*/
-[class^=searchBar_] /*dm list search*/
- { box-shadow: none; }
+[class^=searchBar_] /*dm list search*/ {
+    box-shadow: none;
+}
 
 /*fixes*/
-[class^=sidebar_],
-[class^=userPanelInner_]
- { border-radius: 0 !important; }
-[class^=privateChannels_] > [class^=scroller_] /*user panel overlaps DM list*/
- { margin-bottom: 55px; }
-[class^=gradientBackground_]
- { display: none; } /*remove leftover blurred gradient in VCs*/
-[class^=chat_] > [class^=wrapper_]
- { background: var(--background-mod-subtle);
-   border-left: 1px solid var(--border-subtle); }
+[class^="sidebar_"],
+[class^="userPanelInner_"] {
+    border-radius: 0 !important;
+}
+[class^=privateChannels_] > [class^=scroller_] /*user panel overlaps DM list*/ {
+    margin-bottom: 55px;
+}
+[class^="gradientBackground_"] {
+    display: none;
+} /*remove leftover blurred gradient in VCs*/
+[class^="chat_"] > [class^="wrapper_"] {
+    background: var(--background-mod-subtle);
+    border-left: 1px solid var(--border-subtle);
+}
 
 /*make server banner etc scroll away because of overlap*/
-[class^=sidebar_] [class^=container_]:has( > [class^=header_])
- { position: static; }
+[class^="sidebar_"] [class^="container_"]:has(> [class^="header_"]) {
+    position: static;
+}
 
 :root {
     /* change padding of the bar */
@@ -131,9 +147,9 @@ body { background: center/cover var(--nvbgimg) !important; }
     /* Whether you want the chat to not move up *\
     \*    and down when someone starts typing   */
     --rscb-no-jump-chat: 0;
-     /* Whether you want the messages to clip through *\
+    /* Whether you want the messages to clip through *\
      \*  the gap between slowmode and typing people   */
-     --rscb-clip-chat-through-typing-bar: 0;
+    --rscb-clip-chat-through-typing-bar: 0;
 }
 
 :root {
@@ -176,217 +192,286 @@ body { background: center/cover var(--nvbgimg) !important; }
 }
 
 :root {
-    --custom-app-top-bar-height: 28px
+    --custom-app-top-bar-height: 28px;
 }
-[class^=bar] {
-            backdrop-filter: blur(40px);
+[class^="bar"] {
+    backdrop-filter: blur(40px);
     padding: unset;
-    > [class^=title] {
+    > [class^="title"] {
         position: relative;
         padding-left: 8px;
-        > [class^=title] > [class^=icon] {
+        > [class^="title"] > [class^="icon"] {
             height: 16px;
             width: 16px;
         }
     }
-    > [class^=trailing] {
+    > [class^="trailing"] {
         gap: unset;
-        > [class^=recentsIcon] {
+        > [class^="recentsIcon"] {
             &:hover {
                 background-color: var(--background-modifier-hover);
                 color: var(--interactive-hover);
             }
-            > [class^=button] {
+            > [class^="button"] {
                 height: 16px;
                 width: 16px;
                 padding: 3px 12px;
-                > [class^=iconBadge] {
-                     bottom: 2px;
-                     right: 11px;
+                > [class^="iconBadge"] {
+                    bottom: 2px;
+                    right: 11px;
                 }
             }
         }
-        > a[href="https://support.discord.com"] {
+        > a[href="https://support.discord.com"]
+        {
             display: none;
         }
-        > [class^=button]
-        {
+        > [class^="button"] {
             height: 16px;
             width: 16px;
             padding: 3px 12px;
-            &:hover
-            {
+            &:hover {
                 background-color: var(--background-modifier-hover);
                 color: var(--interactive-hover);
             }
         }
-        > [class^=winButtons] {
+        > [class^="winButtons"] {
             gap: unset;
-            > [class^=winButton] {
+            > [class^="winButton"] {
                 width: calc(var(--custom-app-top-bar-height) * 1);
             }
         }
     }
 }
 
-    .upperContainer__9293f .toolbar__9293f .search__49676 { /* Re-Iconify Search */
-        order: -1;
-        .searchBar__97492 { /* Make the default state only show an icon that can be clicked. */
-            transition: all ease 0.3s;
-            width: 25px;
-            box-sizing: unset;
+.upperContainer__9293f .toolbar__9293f .search__49676 {
+    /* Re-Iconify Search */
+    order: -1;
+    .searchBar__97492 {
+        /* Make the default state only show an icon that can be clicked. */
+        transition: all ease 0.3s;
+        width: 25px;
+        box-sizing: unset;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        .icon__97492 {
+            height: 32px;
+            width: 32px;
+            scale: 1.2;
             cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
-            .icon__97492 {
-                height: 32px;
-                width: 32px;
-                scale: 1.2;
-                cursor: pointer;
-            }
-        }
-        .focused__97492 .searchBar__97492, .open__97492 .searchBar__97492 { /* Expand the search bar when focused, and keep it expanded when text is entered. These classes make it really easy, thanks discord! */
-            width: 225px;
-            box-sizing: border-box;
-            cursor: text;
-            background: var(--background-gradient-low, var(--input-background));
-            border: 1px solid var(--input-border);
-            padding: 2px 0;
-            .icon__97492 {
-                height: 24px;
-                width: 24px;
-                scale: 1;
-                cursor: pointer;
-            }
         }
     }
+    .focused__97492 .searchBar__97492,
+    .open__97492 .searchBar__97492 {
+        /* Expand the search bar when focused, and keep it expanded when text is entered. These classes make it really easy, thanks discord! */
+        width: 225px;
+        box-sizing: border-box;
+        cursor: text;
+        background: var(--background-gradient-low, var(--input-background));
+        border: 1px solid var(--input-border);
+        padding: 2px 0;
+        .icon__97492 {
+            height: 24px;
+            width: 24px;
+            scale: 1;
+            cursor: pointer;
+        }
+    }
+}
 
-    .scroller__36d07::-webkit-scrollbar {
-  width: 4px /* or display: none to hide */
+.scroller__36d07::-webkit-scrollbar {
+    width: 4px; /* or display: none to hide */
 }
 
 .scroller__99e7c::-webkit-scrollbar {
-  width: 4px; /* or display: none to hide */
+    width: 4px; /* or display: none to hide */
 }
 
 .scroller__629e4::-webkit-scrollbar {
-  width: 4px /* or display: none to hide */
+    width: 4px; /* or display: none to hide */
 }
 
 .peopleList__5ec2f::-webkit-scrollbar {
-  width: 4px; /* or display: none to hide */
+    width: 4px; /* or display: none to hide */
 }
 
 .scroller__7d20c::-webkit-scrollbar {
-  width: 4px /* or display: none to hide */
+    width: 4px; /* or display: none to hide */
 }
 
 .sidebarRegionScroller__23e6b::-webkit-scrollbar {
-  width: 4px; /* or display: none to hide */
+    width: 4px; /* or display: none to hide */
 }
 
 .contentRegionScroller__23e6b::-webkit-scrollbar {
-  width: 4px /* or display: none to hide */
+    width: 4px; /* or display: none to hide */
 }
 
-
-:root{
-  --selfMessageColorStart: #46403538;
-  --selfMessageColorEnd: #46403538;
-  --defaultMessageColorStart: #46403538;
-  --defaultMessageColorEnd: #46403538;
+:root {
+    --selfMessageColorStart: #46403538;
+    --selfMessageColorEnd: #46403538;
+    --defaultMessageColorStart: #46403538;
+    --defaultMessageColorEnd: #46403538;
 }
 
-#app-mount [class^="messageListItem__"][data-is-self="true"] [class*=groupStart] > [class*=contents] > [class*=markup],
-#app-mount [class*=message][data-author-self=true] [class*=groupStart] > [class*=contents] > [class*=markup] {
-   text-align: left;
+#app-mount
+    [class^="messageListItem__"][data-is-self="true"]
+    [class*="groupStart"]
+    > [class*="contents"]
+    > [class*="markup"],
+#app-mount
+    [class*="message"][data-author-self="true"]
+    [class*="groupStart"]
+    > [class*="contents"]
+    > [class*="markup"] {
+    text-align: left;
 }
 
-#app-mount [class^="messageListItem__"][data-is-self="true"][class*=message][class*=selected] [class*=contents],
-#app-mount [class*=message][class*=selected][data-author-self=true] [class*=contents] {
+#app-mount
+    [class^="messageListItem__"][data-is-self="true"][class*="message"][class*="selected"]
+    [class*="contents"],
+#app-mount
+    [class*="message"][class*="selected"][data-author-self="true"]
+    [class*="contents"] {
     width: 100%;
 }
 
-#app-mount [class^="messageListItem__"][data-is-self="true"] [class*=replying] [class*=contents] [class*=messageContent]::before,
-#app-mount [class^="messageListItem__"][data-is-self="true"] [class*=mentioned] [class*=contents] [class*=messageContent]::before,
-#app-mount [class*=replying][data-author-self=true] [class*=contents] [class*=messageContent]::before,
-#app-mount [class*=mentioned][data-author-self=true] [class*=contents] [class*=messageContent]::before {
+#app-mount
+    [class^="messageListItem__"][data-is-self="true"]
+    [class*="replying"]
+    [class*="contents"]
+    [class*="messageContent"]::before,
+#app-mount
+    [class^="messageListItem__"][data-is-self="true"]
+    [class*="mentioned"]
+    [class*="contents"]
+    [class*="messageContent"]::before,
+#app-mount
+    [class*="replying"][data-author-self="true"]
+    [class*="contents"]
+    [class*="messageContent"]::before,
+#app-mount
+    [class*="mentioned"][data-author-self="true"]
+    [class*="contents"]
+    [class*="messageContent"]::before {
     left: unset;
     right: 0;
 }
 
-
 @keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-
-#app-mount [class^="messageListItem__"][data-is-self="true"] [class*=contents] > [class*=messageContent],
-#app-mount [class*=message][data-author-self=true] [class*=contents] > [class*=messageContent] {
-    background: linear-gradient(45deg, var(--selfMessageColorStart), var(--selfMessageColorEnd), var(--selfMessageColorStart)) !important;
+#app-mount
+    [class^="messageListItem__"][data-is-self="true"]
+    [class*="contents"]
+    > [class*="messageContent"],
+#app-mount
+    [class*="message"][data-author-self="true"]
+    [class*="contents"]
+    > [class*="messageContent"] {
+    background: linear-gradient(
+        45deg,
+        var(--selfMessageColorStart),
+        var(--selfMessageColorEnd),
+        var(--selfMessageColorStart)
+    ) !important;
     background-size: 200% 200% !important;
     animation: gradientFlow 5s ease infinite !important;
     padding: 0.3vw 0.5vw 0.3vw 0.5vw;
 }
 
-#app-mount [class^="messageListItem__"][data-is-self="true"] a:not([class*=embed] [class*=embedAuthorNameLink]),
-#app-mount [class^="messageListItem__"][data-is-self="true"] [class*=repliedMessage]
-#app-mount [class*=message][data-author-self=true] a:not([class*=embed] [class*=embedAuthorNameLink]),
-#app-mount [class*=message][data-author-self=true] [class*=repliedMessage] {
+#app-mount
+    [class^="messageListItem__"][data-is-self="true"]
+    a:not([class*="embed"] [class*="embedAuthorNameLink"]),
+#app-mount
+    [class^="messageListItem__"][data-is-self="true"]
+    [class*="repliedMessage"]
+    #app-mount
+    [class*="message"][data-author-self="true"]
+    a:not([class*="embed"] [class*="embedAuthorNameLink"]),
+#app-mount
+    [class*="message"][data-author-self="true"]
+    [class*="repliedMessage"] {
     margin-left: auto;
 }
 
-#app-mount [class^="messageListItem__"][data-is-self="true"] [class*=embedAuthor],
-#app-mount [class*=message][data-author-self=true] [class*=embedAuthor] {
+#app-mount
+    [class^="messageListItem__"][data-is-self="true"]
+    [class*="embedAuthor"],
+#app-mount [class*="message"][data-author-self="true"] [class*="embedAuthor"] {
     direction: ltr;
 }
 
-#app-mount [class*=contents] pre,
-#app-mount [class*=message] {
+#app-mount [class*="contents"] pre,
+#app-mount [class*="message"] {
     max-width: 100%;
 }
 
-
-#app-mount [class*=contents] > [class*=messageContent] {
-    background: linear-gradient(45deg, var(--defaultMessageColorStart), var(--defaultMessageColorEnd), var(--defaultMessageColorStart));
+#app-mount [class*="contents"] > [class*="messageContent"] {
+    background: linear-gradient(
+        45deg,
+        var(--defaultMessageColorStart),
+        var(--defaultMessageColorEnd),
+        var(--defaultMessageColorStart)
+    );
     background-size: 200% 200%;
     animation: gradientFlow 5s ease infinite;
     padding: 0.3vw 0.5vw 0.3vw 0.5vw;
     margin-left: unset;
     width: fit-content;
     border-radius: 0.7vw;
-        backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
 }
 
-[class^="messageListItem__"][data-is-self="true"] [class*=compact][class*=wrapper] [class*=messageContent],
-[class*=message] [class*=compact] [class*=wrapper] [data-author-self=true] [class*=messageContent] {
+[class^="messageListItem__"][data-is-self="true"]
+    [class*="compact"][class*="wrapper"]
+    [class*="messageContent"],
+[class*="message"]
+    [class*="compact"]
+    [class*="wrapper"]
+    [data-author-self="true"]
+    [class*="messageContent"] {
     display: flex;
 }
 
-#app-mount [class*=compact] [class*=wrapper] {
+#app-mount [class*="compact"] [class*="wrapper"] {
     padding-top: 8px;
     padding-bottom: 8px;
 }
 
-
 #app-mount .mentioned__5126c .contents_c19a55 .messageContent_c19a55 {
-    background: linear-gradient(135deg, var(--mention), var(--mention-secondary), var(--mention));
+    background: linear-gradient(
+        135deg,
+        var(--mention),
+        var(--mention-secondary),
+        var(--mention)
+    );
     background-size: 200% 200%;
     animation: gradientFlow 3s ease infinite;
 }
 
-#app-mount .mentioned__5126c:hover .contents_c19a55  .messageContent_c19a55,
-#app-mount .mentioned__5126c.selected__5126c .contents_c19a55 .messageContent_c19a55 {
-    background: linear-gradient(135deg, var(--defaultMessageColorStart), var(--defaultMessageColorEnd), var(--defaultMessageColorStart));
+#app-mount .mentioned__5126c:hover .contents_c19a55 .messageContent_c19a55,
+#app-mount
+    .mentioned__5126c.selected__5126c
+    .contents_c19a55
+    .messageContent_c19a55 {
+    background: linear-gradient(
+        135deg,
+        var(--defaultMessageColorStart),
+        var(--defaultMessageColorEnd),
+        var(--defaultMessageColorStart)
+    );
     background-size: 200% 200%;
     animation: gradientFlow 5s ease infinite;
 }
@@ -410,43 +495,48 @@ body { background: center/cover var(--nvbgimg) !important; }
     width: fit-content;
     max-width: 100%;
 }
-[data-is-self=true] [id*=message-reply]::before{
-  display: none;
+[data-is-self="true"] [id*="message-reply"]::before {
+    display: none;
 }
 [class*="mentioned"] {
     animation: ping-shake 1.3s ease-in-out 1 !important;
 }
 
-.channelTextArea_f75fb0, .scrollableContainer__74017, .upload_aa605f {
-  border-radius: 20px !important;
-  border-width: 2px;
-  border-color: #ffffff0e;
+.channelTextArea_f75fb0,
+.scrollableContainer__74017,
+.upload_aa605f {
+    border-radius: 20px !important;
+    border-width: 2px;
+    border-color: #ffffff0e;
 }
-.messagesWrapper__36d07>.scroller__36d07 {
-  padding-bottom: 60px;
-  &::-webkit-scrollbar-track {
-    margin-bottom: 80px;
-  }
-  ~div {
-    bottom: 80px;
-  }
+.messagesWrapper__36d07 > .scroller__36d07 {
+    padding-bottom: 60px;
+    &::-webkit-scrollbar-track {
+        margin-bottom: 80px;
+    }
+    ~ div {
+        bottom: 80px;
+    }
 }
 .formWithLoadedChatInput_f75fb0 {
-  position: absolute;
-  padding: 0 !important;
-  bottom: 0 !important;
-  width: 100%;
-  >div {
-    backdrop-filter: blur(4px);
-    background: transparent;
-    padding: 0 8px 0 0;
-    margin-right: 15px;
-    .channelTextArea__74017, .themedBackground__74017,
-    .channelAttachmentArea_b77158, .upload_aa605f, .wrapper_f7ecac,
-    .stackedBars__74017 {
-      background: transparent !important;
+    position: absolute;
+    padding: 0 !important;
+    bottom: 0 !important;
+    width: 100%;
+    > div {
+        backdrop-filter: blur(4px);
+        background: transparent;
+        padding: 0 8px 0 0;
+        margin-right: 15px;
+        .channelTextArea__74017,
+        .themedBackground__74017,
+        .channelAttachmentArea_b77158,
+        .upload_aa605f,
+        .wrapper_f7ecac,
+        .stackedBars__74017 {
+            background: transparent !important;
+        }
     }
-  }
 }
 
 .container__37e49 {
@@ -481,20 +571,20 @@ body { background: center/cover var(--nvbgimg) !important; }
 }
 
 [class*="childWrapper__"],
-    [class*="childWrapper__"] img,
-    [class*="icon_"],
-    [class*="circleIconButton__"] {
-        border-radius: 40% !important;
-        transition: border-radius 150ms linear;
-    }
+[class*="childWrapper__"] img,
+[class*="icon_"],
+[class*="circleIconButton__"] {
+    border-radius: 40% !important;
+    transition: border-radius 150ms linear;
+}
 
 .panels_c48ade {
-background-color: #1316151a !important;
+    background-color: #1316151a !important;
     backdrop-filter: blur(8px);
 }
 
 .activityPanel_c48ade {
-  background-color: #1316151a;
+    background-color: #1316151a;
     backdrop-filter: blur(8px);
 }
 
